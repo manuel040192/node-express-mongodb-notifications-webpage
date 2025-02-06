@@ -14,7 +14,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-app.use("/notifications", notificationRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 app.get('/', (req, res) => {
   res.send('The server is running correctly.');
