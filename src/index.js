@@ -7,9 +7,9 @@ import notificationRoutes from "./routes/notifications.js";
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization'
+  origin: 'https://node-express-mongodb-notifications-webpage.vercel.app/',
+  methods: ["GET"],
+  credentials: true
 }));
 app.use(express.json());
 
