@@ -7,7 +7,7 @@ import notificationRoutes from "./routes/notifications.js";
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://tu-frontend.vercel.app',
+  origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://next-typescript-notifications-webpage.vercel.app/',
   methods: ["GET"],
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization'
