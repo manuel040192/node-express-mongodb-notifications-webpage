@@ -11,7 +11,7 @@ app.use(cors({
   methods: ["GET"],
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization'
-}));
+}));git 
 app.use(express.json());
 
 mongoose
