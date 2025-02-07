@@ -9,7 +9,8 @@ const app = express();
 app.use(cors({
   origin: 'https://node-express-mongodb-notifications-webpage.vercel.app/',
   methods: ["GET"],
-  credentials: true
+  credentials: true,
+  allowedHeaders: 'Content-Type,Authorization'
 }));
 app.use(express.json());
 
