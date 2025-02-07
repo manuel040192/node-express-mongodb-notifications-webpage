@@ -7,7 +7,7 @@ import notificationRoutes from "./routes/notifications.js";
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://tu-frontend.vercel.app',
   methods: ["GET"],
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization'
@@ -25,5 +25,4 @@ app.get('/', (req, res) => {
   res.send('The server is running correctly.');
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+export default app;
