@@ -7,7 +7,19 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const notifications = await Notification.find();
-    res.json(notifications);
+    const transformed = notifications.map(doc => ({
+      id: doc._id.toString(), // convierte _id a string y lo renombra a id
+      avatar: doc.avatar,
+      name: doc.name,
+      text: doc.text,
+      postName: doc.postName,
+      groupName: doc.groupName,
+      message: doc.message,
+      image: doc.image,
+      time: doc.time,
+      read: doc.read
+    }));
+    res.json(transformed);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener las notificaciones" });
   }
@@ -25,3 +37,4 @@ router.post("/", async (req, res) => {
 });
 
 export default router;
+
